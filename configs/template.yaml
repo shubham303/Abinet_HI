@@ -7,19 +7,19 @@ global:
  
 dataset:
   train: {
-    roots: ['/usr/datasets/synthetic_text_dataset/lmdb_dataset_Hindi/hindi/training/MJ/MJ_train/',
-            '/usr/datasets/synthetic_text_dataset/lmdb_dataset_Hindi/hindi/training/MJ/MJ_test/',
-            '/usr/datasets/synthetic_text_dataset/lmdb_dataset_Hindi/hindi/training/MJ/MJ_valid/',
-            '/usr/datasets/synthetic_text_dataset/lmdb_dataset_Hindi/hindi/training/ST'],
+    roots: ['/nlsasfs/home/ai4bharat/shubhamr/recognition-dataset/hindi/training/MJ/MJ_train/',
+            '/nlsasfs/home/ai4bharat/shubhamr/recognition-dataset/hindi/training/MJ/MJ_test/',
+            '/nlsasfs/home/ai4bharat/shubhamr/recognition-dataset/hindi/training/MJ/MJ_valid/',
+            '/nlsasfs/home/ai4bharat/shubhamr/recognition-dataset/hindi/training/ST'],
     batch_size: 64
   }
   test: {
-    roots: ['/usr/datasets/synthetic_text_dataset/lmdb_dataset_Hindi/hindi/evaluation/kaggle_train',
-    '/usr/datasets/synthetic_text_dataset/lmdb_dataset_Hindi/hindi/evaluation/kaggle_val',
-    '/usr/datasets/synthetic_text_dataset/lmdb_dataset_Hindi/hindi/evaluation/IIIT'],
+    roots: ['/nlsasfs/home/ai4bharat/shubhamr/recognition-dataset/hindi/evaluation/kaggle_train',
+    '/nlsasfs/home/ai4bharat/shubhamr/recognition-dataset/hindi/evaluation/kaggle_val',
+    '/nlsasfs/home/ai4bharat/shubhamr/recognition-dataset/hindi/evaluation/IIIT'],
     batch_size: 64
   }
-  charset_path: /usr/datasets/synthetic_text_dataset/lmdb_dataset_Hindi/hindi/charset_hi.txt
+  charset_path: /nlsasfs/home/ai4bharat/shubhamr/recognition-dataset/hindi/charset_hi.txt
   num_workers: 4
   max_length: 25  # 30
   image_height: 32

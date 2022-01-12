@@ -7,11 +7,11 @@ global:
  
 dataset:
   train: {
-    roots: ['/usr/datasets/synthetic_text_dataset/lmdb_dataset_Hindi/hindi/WikiText-103.csv'],
+    roots: ['/nlsasfs/home/ai4bharat/shubhamr/recognition-dataset/hindi/WikiText-103.csv'],
     batch_size: 4096
   }
   test: {
-    roots: ['/usr/datasets/synthetic_text_dataset/lmdb_dataset_Hindi/hindi/WikiText-103_eval_d1.csv'],
+    roots: ['/nlsasfs/home/ai4bharat/shubhamr/recognition-dataset/hindi/WikiText-103_eval_d1.csv'],
     batch_size: 4096
   }
 
