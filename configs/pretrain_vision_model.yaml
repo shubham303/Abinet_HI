@@ -7,24 +7,22 @@ global:
  
 dataset:
   train: {
-    roots: ['data/training/MJ/MJ_train/', 
-            'data/training/MJ/MJ_test/', 
-            'data/training/MJ/MJ_valid/', 
-            'data/training/ST'],
-    batch_size: 384
+    roots: ['/nlsasfs/home/ai4bharat/shubhamr/recognition-dataset/hindi/training/MJ/MJ_train/',
+            '/nlsasfs/home/ai4bharat/shubhamr/recognition-dataset/hindi/training/MJ/MJ_test/',
+            '/nlsasfs/home/ai4bharat/shubhamr/recognition-dataset/hindi/validation/MJ_valid',
+            '/nlsasfs/home/ai4bharat/shubhamr/recognition-dataset/hindi/training/ST'],
+    batch_size: 64
   }
   test: {
-    roots: ['data/evaluation/IIIT5k_3000', 
-            'data/evaluation/SVT', 
-            'data/evaluation/SVTP',
-            'data/evaluation/IC13_857',
-            'data/evaluation/IC15_1811',
-            'data/evaluation/CUTE80'],
-    batch_size: 384
+    roots: ['/nlsasfs/home/ai4bharat/shubhamr/recognition-dataset/hindi/evaluation/IIIT',
+            '/nlsasfs/home/ai4bharat/shubhamr/recognition-dataset/hindi/evaluation/kaggle_train',
+            '/nlsasfs/home/ai4bharat/shubhamr/recognition-dataset/hindi/evaluation/kaggle_val'
+            ],
+    batch_size: 64
   }
   data_aug: True
   multiscales: False
-  num_workers: 14
+  num_workers: 12
 
 training:
   epochs: 8

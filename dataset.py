@@ -129,6 +129,8 @@ class ImageDataset(Dataset):
         return self.resize(np.array(image)) # TODO:move is_training to here
 
     def __getitem__(self, idx):
+
+       
         image, text, idx_new = self.get(idx)
         if not self.is_training: assert idx == idx_new, f'idx {idx} != idx_new {idx_new} during testing.'
 
