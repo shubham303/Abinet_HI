@@ -11,13 +11,13 @@ dataset:
             '/nlsasfs/home/ai4bharat/shubhamr/recognition-dataset/hindi/training/MJ/MJ_test/',
             '/nlsasfs/home/ai4bharat/shubhamr/recognition-dataset/hindi/training/MJ/MJ_valid/',
             '/nlsasfs/home/ai4bharat/shubhamr/recognition-dataset/hindi/training/ST'],
-    batch_size: 64
+    batch_size: 128
   }
   test: {
     roots: ['/nlsasfs/home/ai4bharat/shubhamr/recognition-dataset/hindi/evaluation/kaggle_train',
     '/nlsasfs/home/ai4bharat/shubhamr/recognition-dataset/hindi/evaluation/kaggle_val',
     '/nlsasfs/home/ai4bharat/shubhamr/recognition-dataset/hindi/evaluation/IIIT'],
-    batch_size: 64
+    batch_size: 128
   }
   charset_path: /nlsasfs/home/ai4bharat/shubhamr/recognition-dataset/hindi/charset_hi.txt
   num_workers: 4
