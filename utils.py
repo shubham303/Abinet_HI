@@ -82,11 +82,9 @@ class CharsetMapper(object):
         length = length if length else self.max_length
         import re
         characters = \
-            list('ऀँंःअआइईउऊऋऌऍएऐऑओऔकखगघङचछजझञटठडढणतथदधनपफबभमयरलळवशषसहऺऻऽािीुूृॄॅेैॉोौ्ॎॐ॒॑॓॔ॖॗॠॡॢॣ।॥ॲ०१२३४५६७८९%/?:,'
-                 '.-')
-        pattern = '[^.' + ''.join(characters) + ']'
+            list('ऀँंःऄअआइईउऊऋऌऍऎएऐऑऒओऔकखगघङचछजझञटठडढणतथदधनऩपफबभमयरऱलळऴवशषसहऺऻ़ऽािीुूृॄॅॆेैॉॊोौ्ॎॏॐ॒॑॓॔ॕॖॗक़ख़ग़ज़ड़ढ़फ़य़ॠॡॢॣ।॥०१२३४५६७८९॰ॱॲॳॴॵॶॷॸॹॺॻॼॽॾॿ')
+        pattern = '[^' + ''.join(characters) + ']'
         text = re.sub(pattern, '', text)
-        
         if padding:
             text = text + self.null_char * (length - len(text))
         if not case_sensitive:

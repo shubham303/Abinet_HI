@@ -7,19 +7,17 @@ global:
  
 dataset:
   train: {
-    roots: ['data/training/MJ/MJ_train/', 
-            'data/training/MJ/MJ_test/', 
-            'data/training/MJ/MJ_valid/', 
-            'data/training/ST'],
+    roots: [ '/usr/datasets/synthetic_text_dataset/lmdb_dataset_Hindi/hindi/training/MJ/MJ_train/',
+             '/usr/datasets/synthetic_text_dataset/lmdb_dataset_Hindi/hindi/training/MJ/MJ_test/',
+             '/usr/datasets/synthetic_text_dataset/lmdb_dataset_Hindi/hindi/validation/MJ_valid',
+             '/usr/datasets/synthetic_text_dataset/lmdb_dataset_Hindi/hindi/training/ST' ],
     batch_size: 384
   }
   test: {
-    roots: ['data/evaluation/IIIT5k_3000', 
-            'data/evaluation/SVT', 
-            'data/evaluation/SVTP',
-            'data/evaluation/IC13_857',
-            'data/evaluation/IC15_1811',
-            'data/evaluation/CUTE80'],
+    roots: [ '/usr/datasets/synthetic_text_dataset/lmdb_dataset_Hindi/hindi/evaluation/IIIT',
+             '/usr/datasets/synthetic_text_dataset/lmdb_dataset_Hindi/hindi/evaluation/kaggle_train',
+             '/usr/datasets/synthetic_text_dataset/lmdb_dataset_Hindi/hindi/evaluation/kaggle_val'
+    ],
     batch_size: 384
   }
   data_aug: True
@@ -29,8 +27,8 @@ dataset:
 training:
   epochs: 10
   show_iters: 50
-  eval_iters: 3000
-  save_iters: 3000
+  eval_iters: 5000
+  save_iters: 5000
 
 optimizer:
   type: Adam
@@ -53,14 +51,14 @@ model:
   ensemble: ''
   use_vision: False
   vision: {
-    checkpoint: workdir/pretrain-vision-model/best-pretrain-vision-model.pth,
+    checkpoint: /home/shubham/Documents/MTP/text-recognition-models/ABINet/workdir/pretrain-vision-model/pretrain-vision-model_0_1000.pth,
     loss_weight: 1.,
     attention: 'position',
     backbone: 'transformer',
     backbone_ln: 3,
   }
   language: {
-    checkpoint:  workdir/pretrain-language-model/pretrain-language-model.pth,
+    checkpoint:  /home/shubham/Documents/MTP/text-recognition-models/ABINet/workdir/pretrain-language-model/pretrain-language-model_0_1000.pth,
     num_layers: 4,
     loss_weight: 1.,
     detach: True,
