@@ -14,7 +14,7 @@ from torchvision import transforms
 
 import dataset
 from utils import CharsetMapper, Timer, blend_mask
-
+import wandb
 
 class IterationCallback(LearnerTensorboardWriter):
     "A `TrackerCallback` that monitor in each iteration."
@@ -33,7 +33,8 @@ class IterationCallback(LearnerTensorboardWriter):
         self.metrics_root = 'metrics/'  # rewrite
         self.timer = Timer()
         self.host = self.learn.rank is None or self.learn.rank == 0
-
+        wandb.init(project=self.name, entity="cs20m064")
+        
     def _write_metrics(self, iteration:int, names:List[str], last_metrics:MetricsList)->None:
         "Writes training metrics to Tensorboard."
         for i, name in enumerate(names):
@@ -104,6 +105,7 @@ class IterationCallback(LearnerTensorboardWriter):
             log_str = f'epoch {epoch} iter {iteration}: loss = {last_loss:6.4f},  ' \
                       f'smooth loss = {smooth_loss:6.4f}'
             logging.info(log_str)
+            wandb.log({"loss":last_loss , "smooth_loss":smooth_loss})
             # log_str = f'data time = {self.timer.data_diff:.4f}s, runing time = {self.timer.running_diff:.4f}s'
             # logging.info(log_str)
 
@@ -122,9 +124,13 @@ class IterationCallback(LearnerTensorboardWriter):
                       f'ted = {last_metrics[3]:6.4f},  ned = {last_metrics[4]:6.4f},  ' \
                       f'ted/w = {last_metrics[5]:6.4f}, '
             logging.info(log_str)
+            
+            wandb.log({"eval loss": last_metrics[0], "ccr": last_metrics[1],"cwr": last_metrics[2],
+                       "ted":last_metrics[3] ,"ned":last_metrics[4] , "ted/w": last_metrics[5]})
+            
             names = ['eval_loss', 'ccr', 'cwr', 'ted', 'ned', 'ted/w']
             self._write_metrics(iteration, names, last_metrics)
-
+            
             # 3. Save best model
             current = last_metrics[2]
             if current is not None and current > self.best:
