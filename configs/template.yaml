@@ -7,19 +7,19 @@ global:
  
 dataset:
   train: {
-    roots: ['/usr/datasets/synthetic_text_dataset/lmdb_dataset_Hindi/hindi/training/MJ/MJ_train/',
-            '/usr/datasets/synthetic_text_dataset/lmdb_dataset_Hindi/hindi/training/MJ/MJ_test/',
-            '/usr/datasets/synthetic_text_dataset/lmdb_dataset_Hindi/hindi/training/MJ/MJ_valid/',
-            '/usr/datasets/synthetic_text_dataset/lmdb_dataset_Hindi/hindi/training/ST'],
+    roots: ['/home/ocr/dataset/recognition/hindi/training/MJ/MJ_train/',
+            '/home/ocr/dataset/recognition/hindi/training/MJ/MJ_test/',
+            '/home/ocr/dataset/recognition/hindi/training/MJ/MJ_valid/',
+            '/home/ocr/dataset/recognition/hindi/training/ST'],
     batch_size: 128
   }
   test: {
-    roots: ['/usr/datasets/synthetic_text_dataset/lmdb_dataset_Hindi/hindi/evaluation/kaggle_train',
-    '/usr/datasets/synthetic_text_dataset/lmdb_dataset_Hindi/hindi/evaluation/kaggle_val',
-    '/usr/datasets/synthetic_text_dataset/lmdb_dataset_Hindi/hindi/evaluation/IIIT'],
+    roots: ['/home/ocr/dataset/recognition/hindi/evaluation/kaggle_train',
+    '/home/ocr/dataset/recognition/hindi/evaluation/kaggle_val',
+    '/home/ocr/dataset/recognition/hindi/evaluation/IIIT'],
     batch_size: 128
   }
-  charset_path: /usr/datasets/synthetic_text_dataset/lmdb_dataset_Hindi/hindi/charset_hi.txt
+  charset_path: /home/ocr/dataset/recognition/hindi/charset_hi.txt
   num_workers: 4
   max_length: 25  # 30
   image_height: 32
