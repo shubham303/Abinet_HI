@@ -11,14 +11,14 @@ dataset:
              '/home/ocr/dataset/recognition/hindi/training/MJ/MJ_test/',
              '/home/ocr/dataset/recognition/hindi/validation/MJ_valid',
              '/home/ocr/dataset/recognition/hindi/training/ST' ],
-    batch_size: 384
+    batch_size: 256
   }
   test: {
     roots: [ '/home/ocr/dataset/recognition/hindi/evaluation/IIIT',
              '/home/ocr/dataset/recognition/hindi/evaluation/kaggle_train',
              '/home/ocr/dataset/recognition/hindi/evaluation/kaggle_val'
     ],
-    batch_size: 384
+    batch_size: 256
   }
   data_aug: True
   multiscales: False
