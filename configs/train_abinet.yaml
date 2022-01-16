@@ -51,14 +51,14 @@ model:
   ensemble: ''
   use_vision: False
   vision: {
-    checkpoint: /home/shubham/Documents/MTP/text-recognition-models/ABINet/workdir/pretrain-vision-model/pretrain-vision-model_0_1000.pth,
+    checkpoint: workdir/pretrain-vision-model/best-pretrain-vision-model.pth,
     loss_weight: 1.,
     attention: 'position',
     backbone: 'transformer',
     backbone_ln: 3,
   }
   language: {
-    checkpoint:  /home/shubham/Documents/MTP/text-recognition-models/ABINet/workdir/pretrain-language-model/pretrain-language-model_0_1000.pth,
+    checkpoint:  workdir/pretrain-language-model/best-pretrain-language-model.pth,
     num_layers: 4,
     loss_weight: 1.,
     detach: True,

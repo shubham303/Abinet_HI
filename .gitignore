@@ -166,3 +166,4 @@ data
 
 # workdir
 workdir*
+/wandb/
